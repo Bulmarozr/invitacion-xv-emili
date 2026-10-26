@@ -53,7 +53,7 @@ section{padding:70px 20px;text-align:center}.light{background:var(--cream);color
 </head>
 <body>
 <audio id="bgMusic" src="assets/fondo.mp3" loop preload="auto"></audio>
-<button class="music" id="musicBtn" type="button" aria-label="Activar música" aria-pressed="false">♫ Música</button>
+<button class="music" id="musicBtn" type="button" aria-label="Activar música" aria-pressed="false">▶ Música</button>
 <header class="hero">
  <img class="hero-bg" src="assets/hero-xv.png" alt="">
  <img class="hero-art" src="assets/hero-xv.png" alt="Quinceañera de espaldas con vestido azul rey, rosas azules y la leyenda Mis 15 Años" fetchpriority="high">
@@ -196,7 +196,7 @@ updateCountdown();setInterval(updateCountdown,1000);
 })();
 (function(){
  const audio=document.getElementById('bgMusic'),btn=document.getElementById('musicBtn');
- function ui(on){btn.textContent=on?'❚❚ Pausar música':'♫ Música';btn.setAttribute('aria-pressed',on);btn.setAttribute('aria-label',on?'Pausar música':'Activar música')}
+ function ui(on){btn.textContent=on?'❚❚ Pausar música':'▶ Música';btn.setAttribute('aria-pressed',on);btn.setAttribute('aria-label',on?'Pausar música':'Activar música')}
  function play(){return audio.play().then(()=>ui(true)).catch(()=>ui(false))}
  function pause(){audio.pause();ui(false)}
  btn.addEventListener('click',()=>audio.paused?play():pause());
@@ -204,7 +204,7 @@ updateCountdown();setInterval(updateCountdown,1000);
  let started=false;
  function first(e){if(started||btn.contains(e.target))return;started=true;play();['pointerdown','keydown','touchend'].forEach(ev=>document.removeEventListener(ev,first))}
  ['pointerdown','keydown','touchend'].forEach(ev=>document.addEventListener(ev,first,{passive:true}));
- audio.addEventListener('error',()=>{btn.textContent='♫ (falta fondo.mp3)'});
+ audio.addEventListener('error',()=>{btn.textContent='▶ (falta fondo.mp3)'});
 })();
 </script>
 </body>
