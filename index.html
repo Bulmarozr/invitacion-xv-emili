@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b1330">
+<meta name="description" content="Invitación a los XV años de Emili, 26 de diciembre de 2026.">
+<title>Mis XV años | Emili</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+SC:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#101a36;--blue:#1746a2;--gold:#d7b76b;--cream:#fffaf0;--muted:#d9deeb}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--navy);color:var(--cream);font-family:Georgia,'Times New Roman',serif;line-height:1.6}
+a{color:inherit}.eyebrow{letter-spacing:.25em;text-transform:uppercase;font-size:.78rem;color:var(--gold)}h1{font-size:clamp(3.6rem,15vw,7.5rem);line-height:1;margin:14px 0;color:#fff;font-weight:normal;font-style:italic}h2{font-weight:normal;font-size:clamp(1.7rem,6vw,2.5rem);color:var(--gold);margin:.2em 0 .5em}.date{font-size:1.2rem;letter-spacing:.12em}.btn{display:inline-block;border:1px solid var(--gold);padding:11px 20px;text-decoration:none;margin:10px 5px;color:#fff;transition:.2s}.btn:hover{background:var(--blue)}.music{position:fixed;right:14px;bottom:14px;z-index:4;border:1px solid var(--gold);background:#101a36;color:white;border-radius:99px;padding:10px 14px;cursor:pointer}
+section{padding:70px 20px;text-align:center}.light{background:var(--cream);color:var(--navy)}.inner{max-width:900px;margin:auto}.rule{width:70px;height:1px;background:var(--gold);margin:20px auto}.lead{font-size:1.15rem;max-width:660px;margin:0 auto 24px}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:18px;margin-top:28px}.card{padding:25px 20px;border:1px solid #d7b76b99;background:#ffffff08}.light .card{background:#fff;border-color:#d7b76b}.symbol{font-size:2rem;color:var(--gold)}.card h3{font-size:1.3rem;font-weight:normal;color:var(--gold)}.light .card h3{color:var(--blue)}.address{font-family:Arial,sans-serif;font-size:.95rem}.countdown{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:26px 0}.time{min-width:75px;padding:12px;border:1px solid #d7b76b88}.time strong{display:block;font-size:1.7rem;color:var(--gold)}.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:16px;margin-top:28px}.gallery img{width:100%;height:340px;object-fit:cover;border:1px solid #d7b76b;padding:5px;background:#fff}.gallery img.church{object-fit:cover}.dress{font-size:1.25rem}.blue-chip{display:inline-block;background:#1746a2;color:white;padding:4px 12px;border-radius:3px}.footer{padding:45px 20px;text-align:center;background:#080d1c;color:var(--muted)}small{color:var(--muted)}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+.rsvp-form{max-width:620px;margin:28px auto 0;text-align:left}.rsvp-form label,.rsvp-form legend{display:block;margin-bottom:8px;color:var(--navy)}.rsvp-form input[type="text"],.rsvp-form textarea{width:100%;padding:12px;border:1px solid #b8ad91;border-radius:2px;font:inherit;color:var(--navy);background:#fff}.rsvp-form fieldset{margin:20px 0;padding:14px;border:1px solid #d7b76b}.rsvp-form .choice{display:inline-flex;align-items:center;gap:8px;margin:5px 20px 5px 0}.rsvp-form textarea{min-height:110px;resize:vertical}.rsvp-form button{font:inherit;cursor:pointer;background:var(--navy)}.form-note{min-height:1.5em;text-align:center;color:var(--navy)}
+
+/* ===== HERO con foto (estilo referencia) ===== */
+.hero{position:relative;min-height:min(78svh,700px);display:flex;flex-direction:column;align-items:center;justify-content:space-between;text-align:center;color:#fff;padding:6svh 20px 7svh;background:#0b1330;overflow:hidden}
+.hero-bg{position:absolute;inset:-30px;width:calc(100% + 60px);height:calc(100% + 60px);object-fit:cover;filter:blur(22px) saturate(1.1);z-index:0}
+.hero-art{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 35%;z-index:1;animation:rise 1.6s ease-out both}
+@media(min-width:700px){.hero-art{object-fit:contain;object-position:50% 50%}}
+.hero:after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,rgba(8,13,28,.55) 0%,rgba(8,13,28,.5) 45%,rgba(8,13,28,.85) 100%)}
+.hero>*:not(.hero-bg):not(.hero-art){position:relative;z-index:2}
+.hero-top{font-family:'Cormorant SC','Cormorant Garamond',Georgia,serif;font-size:clamp(1.05rem,3.6vw,1.45rem);letter-spacing:.06em;margin:0}
+.hero-name{font-family:'Great Vibes','Snell Roundhand','Brush Script MT',cursive;font-style:normal;font-weight:normal;font-size:clamp(4.4rem,19vw,9rem);line-height:1;margin:0;color:#fff;text-shadow:0 4px 24px #0009}
+.hero-date{margin:8px 0 0;letter-spacing:.3em;color:#e8cf91;font-size:1.05rem}
+.hero-scroll{display:inline-block;margin-top:22px;color:#fff;text-decoration:none;font-size:1.6rem;opacity:.85;animation:bob 2.2s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(7px)}}
+@keyframes rise{from{opacity:0;transform:scale(1.05)}to{opacity:1;transform:none}}
+
+/* ===== Portada ilustrada (fondo oscuro) ===== */
+.cover{background:radial-gradient(ellipse at top,#1b2c5e 0%,#0b1330 70%);color:#fffaf0;padding:70px 20px 80px;display:flex;flex-direction:column;align-items:center;text-align:center}
+.poster{width:100%;max-width:440px;line-height:0;border:1px solid #d7b76b99;padding:8px;background:#fffffd;box-shadow:0 20px 70px #000a,0 0 60px #1746a255}
+.poster img{width:100%;height:auto;display:block}
+.cover-info{max-width:520px;padding-top:34px}
+.cover-info .tag{font-style:italic;color:#d9deeb;margin:0 0 18px}
+.cover-info .when{font-size:1.5rem;letter-spacing:.28em;color:#d7b76b;margin:0}
+.cover-info .when span{display:inline-block;margin:0 .35em;color:#d7b76b99}
+.cover-info .bless{margin:22px auto 0;color:#d9deeb}
+.cover .btn{margin-top:24px}
+@media(prefers-reduced-motion:reduce){.hero-art,.hero-scroll{animation:none}}
+</style>
+</head>
+<body>
+<audio id="bgMusic" src="assets/fondo.mp3" loop preload="auto"></audio>
+<button class="music" id="musicBtn" type="button" aria-label="Activar música" aria-pressed="false">♫ Música</button>
+<header class="hero">
+ <img class="hero-bg" src="assets/hero-xv.png" alt="">
+ <img class="hero-art" src="assets/hero-xv.png" alt="Quinceañera de espaldas con vestido azul rey, rosas azules y la leyenda Mis 15 Años" fetchpriority="high">
+ <span></span>
+ <div>
+  <h1 class="hero-name">Emili</h1>
+  <p class="hero-date">26 · 12 · 2026</p>
+  <a class="hero-scroll" href="#portada" aria-label="Bajar a la invitación">⌄</a>
+ </div>
+</header>
+<section class="cover" id="portada">
+ <div class="poster"><img src="assets/hero-xv.png" alt="Emili" width="960" height="1280"></div>
+ <div class="cover-info">
+  <p class="tag">Con la bendición de Dios y el cariño de mi familia</p>
+  <p class="when">26<span>|</span>12<span>|</span>2026</p>
+  <p class="bless">Te invito a compartir este día inolvidable conmigo.</p>
+  <a class="btn" href="#detalles">Ver invitación ↓</a>
+ </div>
+</section>
+<section class="light" id="detalles">
+ <div class="inner">
+  <div class="eyebrow">Acompáñame</div><h2>Un día para recordar</h2><p class="lead">Será una alegría contar con tu presencia en este momento tan especial de mi vida.</p>
+  <div id="countdown" class="countdown" aria-label="Cuenta regresiva"></div>
+  <div class="cards">
+   <article class="card"><div class="symbol">✧</div><h3>Misa de acción de gracias</h3><p><strong>11:00 a. m.</strong></p><p>Parroquia de San Francisco de Asís</p><p class="address">Calle Juárez No. 21, Col. Centro, Tihuatlán, Veracruz.</p><a class="btn" style="color:#101a36" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Parroquia+de+San+Francisco+de+Asis+Calle+Juarez+21+Centro+Tihuatlan+Veracruz">Cómo llegar</a></article>
+   <article class="card"><div class="symbol">✦</div><h3>Recepción</h3><p><strong>9:00 p. m.</strong></p><p>Rancho Las Gaviotas</p><p class="address">Tihuatlán, Veracruz.</p><a class="btn" style="color:#101a36" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Rancho+Las+Gaviotas+Tihuatlan+Veracruz">Cómo llegar</a></article>
+  </div>
+ </div>
+</section>
+<section>
+ <div class="inner"><div class="eyebrow">Con cariño</div><h2>Mi familia</h2><div class="rule"></div>
+  <p class="lead">Mi mamá, <strong>Verónica Almora Huesca</strong>, y mi familia tienen el gusto de compartir contigo esta fecha tan importante.</p>
+  <p><span class="eyebrow">Mi madrina</span><br><strong>Mónica Karina Granados Santa María</strong></p>
+  
+ </div>
+</section>
+<section>
+ <div class="inner"><div class="eyebrow">Con mucho cariño</div><h2>Mi dedicatoria</h2><div class="rule"></div>
+  <p class="lead"><em>Hoy comienza una etapa nueva, llena de sueños, aprendizajes y momentos por descubrir. Agradezco a Dios y a mi familia por acompañarme hasta aquí; me hace muy feliz celebrar mis XV años junto a las personas que quiero. Gracias por ser parte de este día tan especial y por guardar conmigo un recuerdo que llevaré siempre en el corazón.</em></p>
+ </div>
+</section>
+<section class="light">
+ <div class="inner"><div class="eyebrow">Detalles del evento</div><h2>Tu presencia es el mejor regalo</h2>
+  <div class="cards">
+   <article class="card"><div class="symbol">♕</div><h3>Código de vestimenta</h3><p class="dress">Guapos y elegantes</p><p>El color <span class="blue-chip">azul rey</span> está reservado para la quinceañera.</p></article>
+   <article class="card"><div class="symbol">♡</div><h3>Regalo</h3><p class="dress">Regalo 🎁 o sobre ✉️</p><p>Gracias por acompañarme en este día tan especial.</p></article>
+  </div>
+ </div>
+</section>
+<section>
+ <div class="inner"><div class="eyebrow">Mis recuerdos</div><h2>Galería</h2><p>Un pequeño adelanto de este día especial.</p>
+  <div class="gallery">
+   <img src="assets/foto-emili 2.jpeg" alt="Fotografía de Emili">
+   <img class="church" src="assets/parroquia.jpeg" alt="Parroquia de San Francisco de Asís">
+  </div>
+ </div>
+</section>
+<section class="light" id="confirmar">
+ <div class="inner"><div class="eyebrow">Será un gusto verte</div><h2>Confirmación de asistencia</h2>
+  <p class="lead">¡Me encantaría compartir este momento tan especial contigo! Por favor, confirma si contaré con tu presencia.</p>
+  <form class="rsvp-form" id="rsvpForm">
+   <label for="guestName">Nombre *</label>
+   <input id="guestName" name="nombre" type="text" autocomplete="name" required>
+   <fieldset>
+    <legend>Confirmación de asistencia *</legend>
+    <label class="choice"><input type="radio" name="attendance" value="Sí asistiré" required> Sí asistiré</label>
+    <label class="choice"><input type="radio" name="attendance" value="No asistiré" required> No asistiré</label>
+   </fieldset>
+   <label for="greeting">¡Escribe tus felicitaciones a la quinceañera!</label>
+   <textarea id="greeting" name="felicitacion" placeholder="Escribe aquí tu mensaje (opcional)"></textarea>
+   <div style="text-align:center"><button class="btn" id="rsvpSubmit" type="submit">Enviar confirmación por correo</button></div>
+   <p class="form-note" id="formNote" aria-live="polite">La confirmación se enviará a la familia de Emili por correo.</p>
+  </form>
+ </div>
+</section>
+<footer class="footer"><h2>Emili</h2><p>Mis XV años · 26 de diciembre de 2026</p><small>Con amor, esperamos celebrar contigo.</small></footer>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+const target=new Date('2026-12-26T11:00:00-06:00');
+function updateCountdown(){const el=document.getElementById('countdown');let ms=target-Date.now();if(ms<=0){el.textContent='¡Llegó el gran día!';return}const d=Math.floor(ms/86400000),h=Math.floor(ms%86400000/3600000),m=Math.floor(ms%3600000/60000),s=Math.floor(ms%60000/1000);el.innerHTML=[[d,'Días'],[h,'Horas'],[m,'Minutos'],[s,'Segundos']].map(x=>`<div class="time"><strong>${x[0]}</strong>${x[1]}</div>`).join('')}
+updateCountdown();setInterval(updateCountdown,1000);
+(function(){
+ const form=document.getElementById('rsvpForm');
+ const note=document.getElementById('formNote');
+ const submitButton=document.getElementById('rsvpSubmit');
+ const emailConfig={
+  serviceId:'service_zonyk3v',
+  templateId:'template_w6x1lpl',
+  publicKey:'rgXmJ2dtuzJKuLQgI'
+ };
+ form.addEventListener('submit',async event=>{
+  event.preventDefault();
+  if(Object.values(emailConfig).some(value=>value.startsWith('YOUR_'))){
+   note.textContent='El envío de correo todavía no está configurado. No se envió la confirmación.';
+   return;
+  }
+  if(!window.emailjs){
+   note.textContent='No se pudo cargar el servicio de correo. Revisa tu conexión e inténtalo de nuevo.';
+   return;
+  }
+  const data=new FormData(form);
+  const templateParams={
+   guest_name:String(data.get('nombre')||'').trim(),
+   attendance:String(data.get('attendance')||''),
+   greeting:String(data.get('felicitacion')||'').trim(),
+   event_name:'XV años de Emili'
+  };
+  submitButton.disabled=true;
+  note.textContent='Enviando confirmación…';
+  try{
+   await window.emailjs.send(emailConfig.serviceId,emailConfig.templateId,templateParams,{publicKey:emailConfig.publicKey});
+   note.textContent='¡Gracias! Tu confirmación se envió por correo.';
+   form.reset();
+  }catch(error){
+   console.error('No se pudo enviar la confirmación por correo.',error);
+   note.textContent='No se pudo enviar el correo. Inténtalo de nuevo más tarde.';
+  }finally{
+   submitButton.disabled=false;
+  }
+ });
+})();
+(function(){
+ const audio=document.getElementById('bgMusic'),btn=document.getElementById('musicBtn');
+ function ui(on){btn.textContent=on?'❚❚ Pausar música':'♫ Música';btn.setAttribute('aria-pressed',on);btn.setAttribute('aria-label',on?'Pausar música':'Activar música')}
+ function play(){return audio.play().then(()=>ui(true)).catch(()=>ui(false))}
+ function pause(){audio.pause();ui(false)}
+ btn.addEventListener('click',()=>audio.paused?play():pause());
+ // El navegador bloquea el autoplay: arranca con el primer toque/click/tecla en la página
+ let started=false;
+ function first(e){if(started||btn.contains(e.target))return;started=true;play();['pointerdown','keydown','touchend'].forEach(ev=>document.removeEventListener(ev,first))}
+ ['pointerdown','keydown','touchend'].forEach(ev=>document.addEventListener(ev,first,{passive:true}));
+ audio.addEventListener('error',()=>{btn.textContent='♫ (falta fondo.mp3)'});
+})();
+</script>
+</body>
+</html>
