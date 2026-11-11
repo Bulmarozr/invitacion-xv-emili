@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="es">
 <head>
@@ -77,12 +78,45 @@ small{color:var(--muted)}
 .hero-name{font-family:'Great Vibes','Snell Roundhand','Brush Script MT',cursive;font-style:normal;font-weight:normal;font-size:clamp(4.4rem,19vw,9rem);line-height:1;margin:0;color:#fff;text-shadow:0 4px 24px #0009}
 .hero-date{margin:8px 0 0;letter-spacing:.3em;color:#e8cf91;font-size:1.05rem}
 .hero-scroll{display:inline-block;margin-top:22px;color:#fff;text-decoration:none;font-size:1.6rem;opacity:.85;animation:bob 2.2s ease-in-out infinite}
-.hero-name-wrap{position:relative;display:inline-block}
-.butterfly{position:absolute;left:calc(100% - 20px);top:-8%;width:clamp(26px,5vw,36px);height:auto;overflow:visible;filter:drop-shadow(0 0 4px #d7c98a80);animation:butterfly-flight 6.5s ease-in-out infinite}
-.butterfly-wing{transform-box:fill-box;transform-origin:center;animation:butterfly-flutter 1.15s ease-in-out infinite alternate}
+
+/* ===== NOMBRE Y MARIPOSA ===== */
+.hero-name-wrap{
+ position:relative;
+ display:inline-block;
+}
+
+.butterfly{
+ position:absolute;
+ left:calc(100% + 5px);
+ top:50%;
+ width:clamp(3.52rem,15.2vw,7.2rem);
+ height:auto;
+ overflow:visible;
+ transform:translateY(-50%);
+ filter:drop-shadow(0 0 4px #d7c98a80);
+ animation:butterfly-flight 6.5s ease-in-out infinite;
+}
+
+.butterfly-wing{
+ transform-box:fill-box;
+ transform-origin:center;
+ animation:butterfly-flutter 1.15s ease-in-out infinite alternate;
+}
+
 .butterfly-wing-right{animation-delay:-1.15s}
-@keyframes butterfly-flight{0%,100%{transform:translate(0,0) rotate(-4deg)}25%{transform:translate(4px,-3px) rotate(2deg)}55%{transform:translate(7px,1px) rotate(-2deg)}80%{transform:translate(3px,3px) rotate(3deg)}}
-@keyframes butterfly-flutter{from{transform:scaleX(.78)}to{transform:scaleX(1)}}
+
+@keyframes butterfly-flight{
+ 0%,100%{transform:translate(0,-50%) rotate(-4deg)}
+ 25%{transform:translate(4px,calc(-50% - 3px)) rotate(2deg)}
+ 55%{transform:translate(7px,calc(-50% + 1px)) rotate(-2deg)}
+ 80%{transform:translate(3px,calc(-50% + 3px)) rotate(3deg)}
+}
+
+@keyframes butterfly-flutter{
+ from{transform:scaleX(.78)}
+ to{transform:scaleX(1)}
+}
+
 @keyframes bob{50%{transform:translateY(7px)}}
 @keyframes rise{from{opacity:0;transform:scale(1.05)}to{opacity:1;transform:none}}
 
