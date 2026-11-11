@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="es">
 <head>
@@ -79,11 +78,8 @@ small{color:var(--muted)}
 .hero-date{margin:8px 0 0;letter-spacing:.3em;color:#e8cf91;font-size:1.05rem}
 .hero-scroll{display:inline-block;margin-top:22px;color:#fff;text-decoration:none;font-size:1.6rem;opacity:.85;animation:bob 2.2s ease-in-out infinite}
 
-/* ===== NOMBRE Y MARIPOSA ===== */
-.hero-name-wrap{
- position:relative;
- display:inline-block;
-}
+/* NOMBRE Y MARIPOSA */
+.hero-name-wrap{position:relative;display:inline-block}
 
 .butterfly{
  position:absolute;
@@ -102,7 +98,6 @@ small{color:var(--muted)}
  transform-origin:center;
  animation:butterfly-flutter 1.15s ease-in-out infinite alternate;
 }
-
 .butterfly-wing-right{animation-delay:-1.15s}
 
 @keyframes butterfly-flight{
@@ -111,12 +106,10 @@ small{color:var(--muted)}
  55%{transform:translate(7px,calc(-50% + 1px)) rotate(-2deg)}
  80%{transform:translate(3px,calc(-50% + 3px)) rotate(3deg)}
 }
-
 @keyframes butterfly-flutter{
  from{transform:scaleX(.78)}
  to{transform:scaleX(1)}
 }
-
 @keyframes bob{50%{transform:translateY(7px)}}
 @keyframes rise{from{opacity:0;transform:scale(1.05)}to{opacity:1;transform:none}}
 
@@ -129,7 +122,22 @@ small{color:var(--muted)}
 .cover-info .when span{display:inline-block;margin:0 .35em;color:#d7b76b99}
 .cover-info .bless{margin:22px auto 0;color:#d9deeb}
 .cover .btn{margin-top:24px}
-@media(prefers-reduced-motion:reduce){.hero-art,.hero-scroll,.butterfly,.butterfly-wing{animation:none}}
+
+/* MARIPOSA DEL NOMBRE INFERIOR */
+.footer .hero-name-wrap{margin:0 auto}
+.footer .hero-name{
+ font-size:clamp(3rem,10vw,4.5rem);
+ font-style:normal;
+}
+.footer .butterfly{
+    width:clamp(2.4rem, 8vw, 3.6rem);
+    left:calc(100% + 5px);
+    top:50%;
+}
+
+@media(prefers-reduced-motion:reduce){
+ .hero-art,.hero-scroll,.butterfly,.butterfly-wing{animation:none}
+}
 </style>
 </head>
 
@@ -283,7 +291,25 @@ small{color:var(--muted)}
 </section>
 
 <footer class="footer">
- <h2>Emili</h2>
+ <span class="hero-name-wrap">
+  <h2 class="hero-name">Emili</h2>
+  <svg class="butterfly" viewBox="0 0 72 56" role="img" aria-label="Mariposa azul y plateada">
+   <defs>
+    <linearGradient id="butterflyWingFooter" x1="0" y1="0" x2="1" y2="1">
+     <stop stop-color="#d8d0a6"/>
+     <stop offset=".52" stop-color="#b9ad79"/>
+     <stop offset="1" stop-color="#8f855e"/>
+    </linearGradient>
+   </defs>
+   <g class="butterfly-wing butterfly-wing-left">
+    <path d="M34 27C27 8 12 7 7 15c-5 9 9 19 26 16-14 2-20 10-13 15 7 4 14-3 17-17Z" fill="url(#butterflyWingFooter)" fill-opacity=".18" stroke="#c5b982" stroke-width="2.2"/>
+   </g>
+   <g class="butterfly-wing butterfly-wing-right">
+    <path d="M38 27C45 8 60 7 65 15c5 9-9 19-26 16 14 2 20 10 13 15-7 4-14-3-17-17Z" fill="url(#butterflyWingFooter)" fill-opacity=".18" stroke="#c5b982" stroke-width="2.2"/>
+   </g>
+   <path d="M36 23c-2 5-2 13 0 20m0-19c-2-5-5-7-8-8m8 8c2-5 5-7 8-8" fill="none" stroke="#b9ad79" stroke-width="2.2" stroke-linecap="round"/>
+  </svg>
+ </span>
  <p>Mis XV años · 26 de diciembre de 2026</p>
  <small>Con amor, esperamos celebrar contigo.</small>
 </footer>
@@ -420,50 +446,3 @@ setInterval(updateCountdown,1000);
     ui(false);
     return false;
    });
- }
-
- function pause(){
-  audio.pause();
-  ui(false);
- }
-
- // Intentar reproducir automaticamente al abrir la invitacion.
- play();
-
- // El boton permite pausar o reanudar la musica.
- btn.addEventListener('click',()=>{
-  if(audio.paused){
-   play();
-  }else{
-   pause();
-  }
- });
-
- // Si el navegador bloquea el autoplay, iniciar con el primer toque.
- let started=false;
-
- function first(){
-  if(started)return;
-  started=true;
-
-  if(audio.paused){
-   play();
-  }
-
-  ['pointerdown','keydown','touchend'].forEach(ev=>{
-   document.removeEventListener(ev,first);
-  });
- }
-
- ['pointerdown','keydown','touchend'].forEach(ev=>{
-  document.addEventListener(ev,first,{passive:true});
- });
-
- audio.addEventListener('error',()=>{
-  btn.textContent='▶ (falta fondo.mp3)';
- });
-})();
-</script>
-
-</body>
-</html>
